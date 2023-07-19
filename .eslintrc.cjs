@@ -1,0 +1,59 @@
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+    jest: true,
+  },
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-essential",
+    "plugin:prettier/recommended",
+  ],
+  overrides: [
+    {
+      env: {
+        node: true,
+      },
+      files: [".eslintrc.{js,cjs}"],
+      parserOptions: {
+        sourceType: "script",
+      },
+    },
+  ],
+  parser: "vue-eslint-parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    parser: "@typescript-eslint/parser",
+    sourceType: "module",
+    jsxPragma: "React",
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  plugins: ["@typescript-eslint", "vue"],
+  rules: {
+    // eslint (https//eslint.bootcss.com/docs/rules)
+    "no-var": "error",
+    "no-multiple-empty-lines": ["warn", { max: 1 }],
+    "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
+    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+    "no-unexpected-multiline": "error",
+    "no-useless-escape": "off",
+
+    // typeScript(https://typescript-eslint.io/rules)
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/prefer-ts-expect-error": "error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/semi": "off",
+
+    // eslint-plugin-vue (https://eslint.vuejs.org/rules/)
+    "vue/multi-work-component-names": "off",
+    "vue/script-setup-uses-vars": "error",
+    "vue/no-mutating-props": "off",
+    "vue/attribute-hyphenation": "off",
+  },
+};
