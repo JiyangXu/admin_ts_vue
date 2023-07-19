@@ -1,10 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+// import element-plus
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 
-const fun = () => {
-  console.log('this is test')
-}
-
-fun()
+// get instance
+const app = createApp(App)
+// install element-plus
+app.use(ElementPlus)
+app.mount('#app')
