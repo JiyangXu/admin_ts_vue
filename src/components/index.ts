@@ -8,8 +8,8 @@ export default {
     Object.keys(components).forEach((key: string) => {
       app.component(key, components[key])
     })
-    for(const [key,component] of Object.entries(ElementPlusIconsVue)){
-      app.component(key,component)
+    for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+      app.component(key, component)
     }
   },
 }
